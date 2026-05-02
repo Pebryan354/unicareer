@@ -1,14 +1,12 @@
-import { routes } from "vue-router/auto-routes";
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // Gunakan mode default (true) untuk dev agar vite-node tidak bingung,
-  // kita akan atur SSG di level perintah build/generate saja.
+  // Devtools diaktifkan untuk mempermudah debugging
   devtools: { enabled: true },
+  
   ssr: true,
 
   app: {
-    // Kita kosongkan baseURL dulu untuk development agar tidak konflik dengan socketPath
+    // Base URL disesuaikan dengan folder di GitHub Pages
     baseURL: "/unicareer/",
     head: {
       htmlAttrs: { lang: "id" },
@@ -48,8 +46,8 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    // Menghindari masalah eksperimental pada Nuxt 4
-    preset: "github_pages",
+    // Gunakan preset github-pages (dengan tanda hubung) yang standar untuk Nitro
+    preset: "github-pages",
     prerender: {
       failOnError: false,
     },
@@ -58,5 +56,6 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: "2026-04-03",
+  // Gunakan tanggal yang valid (format YYYY-MM-DD)
+  compatibilityDate: "2024-04-03",
 });
