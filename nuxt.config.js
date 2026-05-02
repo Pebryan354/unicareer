@@ -4,12 +4,14 @@ import { routes } from "vue-router/auto-routes";
 export default defineNuxtConfig({
   // Gunakan mode default (true) untuk dev agar vite-node tidak bingung,
   // kita akan atur SSG di level perintah build/generate saja.
-  ssr: false,
+  devtools: { enabled: true },
+  ssr: true,
 
   app: {
     // Kita kosongkan baseURL dulu untuk development agar tidak konflik dengan socketPath
     baseURL: "/unicareer/",
     head: {
+      htmlAttrs: { lang: "id" },
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
       title: "UniCareer Portal",
